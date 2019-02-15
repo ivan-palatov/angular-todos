@@ -20,7 +20,7 @@ export class TodoItemComponent implements OnInit {
   ngOnInit() {}
 
   // Set dynamic classes
-  setClasses() {
+  setClasses(todo: Todo) {
     return {
       todo: true,
       'is-complete': this.todo.completed,
@@ -28,7 +28,7 @@ export class TodoItemComponent implements OnInit {
   }
 
   onToggle(todo: Todo) {
-    todo.completed = !todo.completed;
+    todo.completed = todo.completed;
     // Toggle on server
     this.todoService.toggleCompleted(todo).subscribe(res => {
       console.log(res);

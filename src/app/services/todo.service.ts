@@ -25,4 +25,8 @@ export class TodoService {
   deleteTodo(todo: Todo) {
     return this.http.delete<any>(`${this.todosUrl}/${todo.id}`);
   }
+
+  addTodo(todo: Todo) {
+    return this.http.post<any>(this.todosUrl, todo);
+  }
 }
